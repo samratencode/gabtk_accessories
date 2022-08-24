@@ -11,7 +11,7 @@ library(scatterPlotMatrix)
 setwd("/Users/xxxx/Desktop/Benchmarking")
 
 ##Reading files
-benc_pca= read.delim2("pca_bench_m.tsv")
+benc_pca= read.delim2("pca_bench.tsv")
 head(benc_pca)
 label_benc<-benc_pca[1:2]
 head(label_benc)
