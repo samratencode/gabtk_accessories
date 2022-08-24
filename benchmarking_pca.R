@@ -8,7 +8,7 @@ library(lfda)
 library(scatterPlotMatrix)
 
 ##Setting up working directory
-setwd("/Users/sash0009/Desktop/Benchmarking")
+setwd("/Users/xxxx/Desktop/Benchmarking")
 
 ##Reading files
 benc_pca= read.delim2("pca_bench_m.tsv")
