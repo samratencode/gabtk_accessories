@@ -4,6 +4,7 @@ library(ggplot2)
 library(GGally)
 library(stats)
 library(ggfortify)
+library(PCAtools)
 library(lfda)
 library(scatterPlotMatrix)
 
