@@ -6,6 +6,8 @@ library(RColorBrewer)
 
 ##Setting up working directory
 setwd("/Users/xxxx/Desktop/Benchmarking")
+
+##Reading files
 cog<-read.delim("long.tsv")
 head(cog)
 row.names(cog)<-cog$Assembly
