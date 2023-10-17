@@ -1,19 +1,26 @@
-cog<-read.delim("long.tsv")
-View(cog)
-row.names(cog)<-cog$Assembly
-cog<-cog[,-1]
-View(cog)
-dff <- as.matrix(cog)
-View(dff)
 library(gplots)
 library(superheat)
 library(pheatmap)
 library(RColorBrewer)
+
+cog<-read.delim("long.tsv")
+head(cog)
+row.names(cog)<-cog$Assembly
+cog<-cog[,-1]
+head(cog)
+dff <- as.matrix(cog)
+head(dff)
 #Colors=brewer.pal(11,"Spectral")
 Colors=brewer.pal(9,"YlGnBu")
 #Colors=c("blue","yellow")
 #Colors=colorRampPalette(Colors)(200)
+
 pheatmap(dff, color = Colors, show_rownames = 8, show_colnames = 8)
+pheatmap((dff), color = Colors, show_rownames = 4, show_colnames = 4, display_numbers =T, number_format = "%.2f",fontsize_number = 4.5, number_color = "Black",fontsize_row = 7, fontsize_col = 7, cellwidth = 16, cellheight = 11, cluster_rows = FALSE, cluster_cols = FALSE)
+pheatmap((dff), color = Colors, show_rownames = 5, show_colnames = 5, display_numbers =T, number_format = "%d",fontsize_number = 7, number_color = "Black",fontsize_row = 7, fontsize_col = 7, cellwidth = 16, cellheight = 11, angle_col = "315",cluster_rows = FALSE, cluster_cols = FALSE)
+
+image=pheatmap((dff), color = Colors, show_rownames = 5, show_colnames = 5, display_numbers =T, number_format = "%d",fontsize_number = 7, number_color = "Black",fontsize_row = 7, fontsize_col = 7, cellwidth = 16, cellheight = 11, angle_col = "315",cluster_rows = FALSE, cluster_cols = FALSE)
+ggsave(file="test.svg", plot=image, width=10, height=8)
 
 superheat(X=dff, X.text = round(as.matrix(dff), 1),  X.text.size = 2.1, heat.pal = c("#b35806", "white", "#542788"),bottom.label.text.angle = 90,left.label.text.size = 2.5, bottom.label.text.size = 3, left.label.col = "white", bottom.label.col = "white",legend.vspace = 0.0, scale = TRUE)
 
