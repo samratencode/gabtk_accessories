@@ -1,6 +1,7 @@
 library(gplots)
 library(superheat)
 library(pheatmap)
+library(ggplot2)
 library(RColorBrewer)
 
 cog<-read.delim("long.tsv")
