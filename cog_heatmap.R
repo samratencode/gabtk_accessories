@@ -11,6 +11,8 @@ setwd("/Users/xxxx/Desktop/Benchmarking")
 ##Reading files
 cog<-read.delim("long.tsv")
 head(cog)
+
+##Matrix creation
 row.names(cog)<-cog$Assembly
 cog<-cog[,-1]
 head(cog)
