@@ -4,6 +4,8 @@ library(pheatmap)
 library(ggplot2)
 library(RColorBrewer)
 
+##Setting up working directory
+setwd("/Users/xxxx/Desktop/Benchmarking")
 cog<-read.delim("long.tsv")
 head(cog)
 row.names(cog)<-cog$Assembly
